@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# SQL Server Management Studio Solution File, Format Version 13.00
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "01. Profiler", "01. Profiler\01. Profiler.ssmssqlproj", "{AC4C8A4D-4B2C-46B6-BEC7-081FE46D4AC3}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "02. ExtendedEvents", "02. ExtendedEvents\02. ExtendedEvents.ssmssqlproj", "{908BABB0-4D54-4107-96AC-7DEE4EE8B774}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "03. sp_whoisactive", "03. sp_whoisactive\03. sp_whoisactive.ssmssqlproj", "{21184B61-AF05-40F5-A6A7-D25EED2B382B}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "05. QueryTuning", "05. QueryTuning\05. QueryTuning.ssmssqlproj", "{071BD728-8E9B-4390-B46E-452C78C5D67C}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "00. DMVs", "00. DMVs\00. DMVs.ssmssqlproj", "{2964DB58-BB60-4493-82E9-0C96DE731194}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC4C8A4D-4B2C-46B6-BEC7-081FE46D4AC3}.Default|Default.ActiveCfg = Default
+		{908BABB0-4D54-4107-96AC-7DEE4EE8B774}.Default|Default.ActiveCfg = Default
+		{21184B61-AF05-40F5-A6A7-D25EED2B382B}.Default|Default.ActiveCfg = Default
+		{071BD728-8E9B-4390-B46E-452C78C5D67C}.Default|Default.ActiveCfg = Default
+		{2964DB58-BB60-4493-82E9-0C96DE731194}.Default|Default.ActiveCfg = Default
+		{0C1F93F5-C3A1-4249-9513-4C7968EE9697}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
