@@ -1,0 +1,112 @@
+Indirizzo di partenza
+http://www.meteo.psu.edu/holocene/public_html/Mann/research/res_pages/old/mbh99.html
+
+**********************************************************************************************
+						POWER QUERY						
+**********************************************************************************************
+1) Caricare reconstruction (opzione: do not detect row!!!)
+1.1) Disabilitare Data type detection
+1.2) Eliminare la prima colonna vuota
+1.3) Rinominare la colonna 2 in Year (date)
+1.4) Rinoninare la column 3 in Reconstructed Temp Change (decimal number)
+1.5) Nome alla query: Data
+
+2) Caricare instrumental (opzione: do not detect row!!!)
+2.1) Disabilitare Data type detection 
+2.2) Eliminare la prima colonna vuota
+2.3) Rinominare la colonna 2 in Year (date)
+2.4) Rinoninare la column 3 in Instrumental Temp Change (decimal number)
+2.5) Nome alla query: Instrumental Data
+
+3) Merge di:  (Data) con (Instrumental Data) per la colonna anno con l’opzione (Full Outer)
+3.1) Estrarre tutte le colonne da “table” e levare la spunta “use original column name prefix”
+3.2) Aggiungere una colonna indice che parte da 1000 e ha come incremento 1 e mettere nome  Year 
+3.3) Cancellare entrambi le colonne “year”
+3.4) Convertire Index in (Text) 
+3.5) Cambiare il nome di colonna di index in e cambiare nome in “Date”
+3.6) Convertire “Date” in (Date)
+
+usare file sigma.m ---->
+4) Caricare i dati Associated Error bars (opzione: base to the first 200 rows!!!!!)
+4.1) Cambiare il tipo di Year in text
+4.2) Cancellare la prima e l’ultima colonna 
+4.3) Rinominare le colonne in Year e Sigma e cambiare il tipo di Year in (date)
+4.3) Il nome della query è: (Sigma) <-------------- 
+
+4.4) Merge per year partendo da data (left outer) prendere solo (sigma)
+
+4.5) Aggiungere una colonna che somma la temperatura ricostruita con il campo sigma [Reconstructed Temp Change]+[Sigma]) che chiamiamo “Positive Variance” (decimal number)
+4.6) Aggiungere una colonna che sottrae la temperatura ricostruita con il campo sigma  [Reconstructed Temp Change]-[Sigma]) che chiamiamo “Negative Variance” (decimal number)
+
+4.7) Disabilitare il caricamento sia per: Instrumental data e Sigma
+
+
+***************************************************************************************
+						POWER PIVOT						
+
+***************************************************************************************
+----------------------------------------------Colonne calcolate------------------------
+Devo verificare per ogni mese che ci sia almeno una delle due temperature medie o quella raccolta con gli strumenti o quella ricostruita e se ci sono entrambe calcolo la media
+
+Temp Average =
+IF (
+    ISBLANK ( [Instrumental Temp Change] ),
+    [Reconstructed Temp Change],
+    IF (
+        ISBLANK ( [Reconstructed Temp Change] ),
+        [Instrumental Temp Change],
+        ( [Instrumental Temp Change] + [Reconstructed Temp Change] )
+            / 2
+    )
+)
+----------------------------
+Mi serve estrarmi una colonna anno
+Year = YEAR(Data[Date])
+
+
+------------------------------Misure--------------------------------------------------
+Calcolo la somma delle temperature medie
+Temperature Change = SUM(Data[Temp Average])
+
+-----------------------------------
+Media mobile calcolata su 40 anni
+Trend line40 =
+AVERAGEX (
+    DATESINPERIOD ( Data[Date], LASTDATE ( Data[Date] ), -40, YEAR ),
+    [Temperature Change]
+)
+
+----------------------------------------------Colonne calcolate------------------------
+Prerequisiti!!! caricare con Power Query->>>> il file excel century.xlsx
+Serve per calcolare la media per centenario da una tabella non relazionata
+
+CenturyRange = CALCULATE (
+    VALUES ( Century[Century] ),
+    FILTER (
+        Century,
+        Data[Year] >= Century[From]
+        &&  Data[Year]< Century[To]
+    )
+)
+
+**********************************************************************************************
+					POWER VIEW
+**********************************************************************************************
+1) Line chart
+1.1) Year che è il primo giorno di ogni anno negli (axis)
+1.2) Reconstructed Temp Change (value)
+1.3) Instrumental Temp Change (value)
+1.4) Positive Variance (value) 
+1.5) Negative Variance (value)
+1.6) Trend Line 40
+1.7) Format->Data colors
+	1.7.1) Colore  GRIGIO SCURO!!! per Reconstructed Temp Change  7D4F73
+	1.7.2) Colore  ROSSO!!! scuro per Instrumental Temp Change 796409
+	1.7.3) Colore grigio chiaro per Positive Variance e Negative Variance E6E6E6
+	1.7.4) Colore  GRIGIO SCURO!!! per Trend Line 40 5F6B6D
+1.8) Viual narrative impostato su OnlyYear e Temperature Change
+
+**********************************************************************************************
+					INSERIRE IN UNA PRESENTAZIONE
+**********************************************************************************************
+https://sway.com/hrWyhcJlNBPjWI4w

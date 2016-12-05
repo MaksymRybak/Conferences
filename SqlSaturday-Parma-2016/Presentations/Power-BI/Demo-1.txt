@@ -1,0 +1,6 @@
+Costruzione del flow
+https://flow.microsoft.com/manage/environments/Default-52b05f4e-ca61-4e07-860c-6ad265cf2514/flows
+Pagina di Power BI
+https://app.powerbi.com/groups/me/dashboards/7e5830fc-6e71-4ff8-afe5-80fc955b3527
+
+#sqlsat566 tweet dalla sessione di @marcopozzan per demo Power BI + Flow
