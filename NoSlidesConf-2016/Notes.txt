@@ -1,0 +1,19 @@
+Trivago talk by @pistenprinz:
+
+Trivago is PHP based web platform.
+The talk was about Trivago's workflow regarding development of a new feature.
+Everything starts with the creation of a new task on ticket management platform (eg: Jira, YouTrack).
+The developer creates new branch where he/she will push new changes.
+For every feature they have a dedicated folder.
+In features.xml they manage on/off settings of every feature, and other config params.
+They use template framework to develop FE. Everythins starts from the base template. 
+They have automated tests for FE, every web part is under some tests, depends on the part.
+They are using https://symfony.com/ as web framework.
+They also have some development opened to the public on github https://github.com/trivago.
+When the code on the feature branch is ready to be merged to the master, 
+they create pull request and other persons (NOT the feature developer!) of the team have to review the code and merge it to the master.
+
+PS: 
+IDE seen during the presentation was WebStorm.
+BitBucket for GIT.
+Jenkins for CI and CD.
