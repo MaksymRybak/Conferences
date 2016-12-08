@@ -1,0 +1,17 @@
+Talk by @arkh4m
+
+All docs regardning the presentation you can find here https://github.com/Arkham/jack-dies.
+Programming language Python.
+We've seen next libraries in use:
+- Pandas library to analyze the data
+- Sklearn library for machine learning in python
+
+Before the selection of algorythm to use we have to analyze the data that we have. To understand better the data. 
+To be able interpret correctly the result.
+To understand better the data we can plot it and build some graphics. Based on relations inside the data store.
+
+When we have choosen an algorithm to use, first, we have to provide the training data set. In this way we teach the algorithm.
+To test the result, we have to provide another data set that contains the data of which we want to retrieve some usefull 
+information.
+Very important is to have reasonable data.
+
