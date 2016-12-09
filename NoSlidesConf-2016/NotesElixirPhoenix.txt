@@ -1,0 +1,2 @@
+Talk by @whatyouhide - Crowd-controlling a game with Elixir and Phoenix
+Repo with the code: https://github.com/whatyouhide/pass_the_chain
