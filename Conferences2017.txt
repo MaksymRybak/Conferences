@@ -2,3 +2,4 @@
 23/2/2014: Design AI http://fluel.it/events/design-ai-2/ (a pagamento, prezzi http://fluel.it/events/design-ai-2/#registration_hook)
 10/3/2017: Devops Italia http://www.incontrodevops.it/ (a pagamento, costo 63€)
 20/3/2017 - 21/3/2017: Microsoft Tech Summit Milan https://www.microsoft.com/it-it/techsummit/milan.aspx?wt.mc_id=AID564073_QSG_125622
+20/5/2017: SQL Saturday Kiev, Ukraine http://www.sqlsaturday.com/616/eventhome.aspx 
