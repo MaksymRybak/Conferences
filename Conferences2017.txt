@@ -4,3 +4,4 @@
 10/3/2017: Devops Italia http://www.incontrodevops.it/ (a pagamento, costo 63€)
 20/3/2017 - 21/3/2017: Microsoft Tech Summit Milan https://www.microsoft.com/it-it/techsummit/milan.aspx?wt.mc_id=AID564073_QSG_125622
 20/5/2017: SQL Saturday Kiev, Ukraine http://www.sqlsaturday.com/616/eventhome.aspx 
+16/9/2017: Agile business day a Venezia http://www.agilebusinessday.com/
